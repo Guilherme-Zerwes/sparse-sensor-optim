@@ -14,7 +14,7 @@ class Filter(BaseEstimator, TransformerMixin):
         return self
     
     def transform(self, X):
-        b, a = butter(2, 80, 'low', fs=1024)
+        b, a = butter(2, 100, 'low', fs=1024)
 
         for i in range(X.shape[0]):
             X[i,:] = filtfilt(b, a, X[i, :], padlen=150)

@@ -22,7 +22,8 @@ class ar:
             aux1 = (order-i-1)
             aux2 = -(i+1)
             X_train[:,i] = X[aux1:aux2]
-        coefs = np.dot(np.linalg.pinv(X_train), Y_train)
+        # coefs = np.dot(np.linalg.pinv(X_train), Y_train)
+        coefs = np.linalg.lstsq(X_train, Y_train)[0]
         self.order = order
         self.coefs = coefs
 
