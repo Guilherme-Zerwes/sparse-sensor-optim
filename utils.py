@@ -71,7 +71,7 @@ class TrainAr(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         #AR model training
-        nr = 30 #number of regressive coeficients (ie. lag number)
+        nr = 15 #number of regressive coeficients (ie. lag number)
         coeficients = np.zeros((X.shape[0], X.shape[2], nr))
         # scores = np.zeros((y_train.shape[1]))
 
